@@ -1,6 +1,7 @@
 twitter
 =======
 using twitter's API to look at:
+
 	common words in these tweets
 	common hashtags in these tweets
 	common words in other tweets
@@ -11,14 +12,11 @@ using twitter's API to look at:
 	user location
 
 for these two groups of hashtags:
-
-#womenagainstfeminism
-#feminismisawful
-
+	womenagainstfeminism
+	feminismisawful
 vs
-
-#feminism
-#feminist
-#genderequality
-#yesallwomen
-#yesallfeminists
+	feminism
+	feminist
+	genderequality
+	yesallwomen
+	yesallfeminists
