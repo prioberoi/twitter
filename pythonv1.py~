@@ -1,0 +1,15 @@
+import tweepy
+
+consumer_key = 'eel4qmFSFqrNuqXxnRKeshTh9'
+consumer_secret = 'mlD827EysH3rZKzyOlDxgBRFueW4DtpAWaTU41wuIDcszSBd8w'
+access_token = '2695991958-uEfuaeENt1Rt2k3SHgzhUzTOSX1bc1XQMk2w78d'
+access_token_secret = 'KxHtRKkAAGzRh0YkIfOSQ27KPcZw5IGgiHdHCe0uYZemx'
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+api = tweepy.API(auth)
+
+for tweet in tweepy.Cursor(api.search, q='womenagainstfeminism', count=500).items():
+    print tweet
+

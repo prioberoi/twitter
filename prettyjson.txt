@@ -1,0 +1,235 @@
+{u'contributors': None, 
+u'truncated': False, 
+u'text': u'RT @caitlin_roper: Hahaha #WomenAgainstFeminism #TreesAgainstEnvironmentalism http://t.co/8l1bvwePPb', 
+u'in_reply_to_status_id': None, 
+u'id': 496949716308209664, 
+u'favorite_count': 0, 
+u'source': u'<a href="http://twitter.com" rel="nofollow">Twitter Web Client</a>', 
+u'retweeted': False, 
+u'coordinates': None, 
+u'entities': {
+	u'symbols': [], 
+	u'user_mentions': [{
+		u'id': 424971370, 
+		u'indices': [3, 17], 
+		u'id_str': u'424971370', 
+		u'screen_name': u'caitlin_roper', 
+		u'name': u'Caitlin Roper'
+	}], 
+	u'hashtags': [{
+		u'indices': [26, 47], 
+		u'text': u'WomenAgainstFeminism'
+		}, {
+		u'indices': [48, 77], 
+		u'text': u'TreesAgainstEnvironmentalism'
+	}], 
+	u'urls': [], 
+	u'media': [{
+		u'source_status_id_str': u'496874246199861249', 
+		u'expanded_url': u'http://twitter.com/caitlin_roper/status/496874246199861249/photo/1', 
+		u'display_url': u'pic.twitter.com/8l1bvwePPb', 
+		u'url': u'http://t.co/8l1bvwePPb', 
+		u'media_url_https': u'https://pbs.twimg.com/media/BuVAfoVIIAESQ6B.png', 
+		u'source_status_id': 496874246199861249, 
+		u'id_str': u'496874246040461313', 
+		u'sizes': {
+			u'large': {
+				u'h': 527, u'resize': u'fit', u'w': 455
+			}, 
+			u'small': {
+				u'h': 393, 
+				u'resize': u'fit', 
+				u'w': 340
+			}, 
+			u'medium': {
+				u'h': 527, 
+				u'resize': u'fit', 
+				u'w': 455
+			}, 
+			u'thumb': {
+				u'h': 150, 
+				u'resize': u'crop', 
+				u'w': 150
+			}
+		}, 
+		u'indices': [78, 100], 
+		u'type': u'photo', 
+		u'id': 496874246040461313, 
+		u'media_url': u'http://pbs.twimg.com/media/BuVAfoVIIAESQ6B.png'
+	}]
+}, 
+u'in_reply_to_screen_name': None, 
+u'in_reply_to_user_id': None, 
+u'retweet_count': 130, 
+u'id_str': u'496949716308209664', 
+u'favorited': False, 
+u'retweeted_status': {
+	u'contributors': None, 
+	u'truncated': False, 
+	u'text': u'Hahaha #WomenAgainstFeminism #TreesAgainstEnvironmentalism http://t.co/8l1bvwePPb', 
+	u'in_reply_to_status_id': None, 
+	u'id': 496874246199861249, 
+	u'favorite_count': 114, 
+	u'source': u'<a href="https://about.twitter.com/products/tweetdeck" rel="nofollow">TweetDeck</a>', 
+	u'retweeted': False, 
+	u'coordinates': None, 
+	u'entities': {
+		u'symbols': [], 
+		u'user_mentions': [], 
+		u'hashtags': [
+			{
+				u'indices': [7, 28], 
+				u'text': u'WomenAgainstFeminism'
+			}, {
+				u'indices': [29, 58], 
+				u'text': u'TreesAgainstEnvironmentalism'
+			}
+		], 
+		u'urls': [], 
+		u'media': [
+			{
+				u'expanded_url': u'http://twitter.com/caitlin_roper/status/496874246199861249/photo/1', 
+				u'display_url': u'pic.twitter.com/8l1bvwePPb', 
+				u'url': u'http://t.co/8l1bvwePPb', 
+				u'media_url_https': u'https://pbs.twimg.com/media/BuVAfoVIIAESQ6B.png', 
+				u'id_str': 
+				u'496874246040461313', 
+				u'sizes': {u'large': {u'h': 527, u'resize': u'fit', u'w': 455}, u'small': {u'h': 393, u'resize': u'fit', u'w': 340}, u'medium': {u'h': 527, u'resize': u'fit', u'w': 455}, u'thumb': {u'h': 150, u'resize': u'crop', u'w': 150}}, 
+				u'indices': [59, 81], 
+				u'type': u'photo', 
+				u'id': 496874246040461313, 
+				u'media_url': u'http://pbs.twimg.com/media/BuVAfoVIIAESQ6B.png'
+			}
+		]
+	}, 
+	u'in_reply_to_screen_name': None, 
+	u'in_reply_to_user_id': None, 
+	u'retweet_count': 130, 
+	u'id_str': u'496874246199861249', 
+	u'favorited': False, 
+	u'user': {
+		u'follow_request_sent': False, 
+		u'profile_use_background_image': True, 
+		u'default_profile_image': False, 
+		u'id': 424971370, 
+		u'profile_background_image_url_https': u'https://abs.twimg.com/images/themes/theme19/bg.gif', 
+		u'verified': False, 
+		u'profile_text_color': u'333333', 
+		u'profile_image_url_https': u'https://pbs.twimg.com/profile_images/454628807807225857/I9nLypjw_normal.png', 
+		u'profile_sidebar_fill_color': u'F6FFD1', 
+		u'entities': {
+			u'url': {
+				u'urls': [
+					{
+						u'url': u'http://t.co/OVhMJuStp2', 
+						u'indices': [0, 22], 
+						u'expanded_url': u'http://www.collectiveshout.org', 
+						u'display_url': u'collectiveshout.org'
+					}
+				]
+			}, 
+			u'description': {u'urls': []}
+		}, 
+		u'followers_count': 1689, 
+		u'profile_sidebar_border_color': u'9E9B7E', 
+		u'id_str': u'424971370', 
+		u'profile_background_color': u'FFF04D', 
+		u'listed_count': 15, 
+		u'is_translation_enabled': False, 
+		u'utc_offset': None, 
+		u'statuses_count': 13217, 
+		u'description': u"*Insert 'The Final Countdown' music here*", 
+		u'friends_count': 1487, 
+		u'location': u'Australia', 
+		u'profile_link_color': u'003ACC', 
+		u'profile_image_url': u'http://pbs.twimg.com/profile_images/454628807807225857/I9nLypjw_normal.png', 
+		u'following': False, 
+		u'geo_enabled': False, 
+		u'profile_banner_url': u'https://pbs.twimg.com/profile_banners/424971370/1397136291', 
+		u'profile_background_image_url': u'http://abs.twimg.com/images/themes/theme19/bg.gif', 
+		u'screen_name': u'caitlin_roper', 
+		u'lang': u'en', 
+		u'profile_background_tile': False, 
+		u'favourites_count': 4597, 
+		u'name': u'Caitlin Roper', 
+		u'notifications': False, 
+		u'url': u'http://t.co/OVhMJuStp2', 
+		u'created_at': u'Wed Nov 30 11:46:35 +0000 2011', 
+		u'contributors_enabled': False, 
+		u'time_zone': None, 
+		u'protected': False, 
+		u'default_profile': False, 
+		u'is_translator': False
+	}, 
+	u'geo': None, 
+	u'in_reply_to_user_id_str': None, 
+	u'possibly_sensitive': False, 
+	u'lang': u'en', 
+	u'created_at': u'Wed Aug 06 04:23:46 +0000 2014', 
+	u'in_reply_to_status_id_str': None, 
+	u'place': None, 
+	u'metadata': {
+		u'iso_language_code': u'en', u'result_type': u'recent'
+	}
+}, 
+u'user': {
+	u'follow_request_sent': False, 
+	u'profile_use_background_image': True, 
+	u'default_profile_image': False, 
+	u'id': 375294652, 
+	u'profile_background_image_url_https': u'https://pbs.twimg.com/profile_background_images/612515184/3vxfm489pbpn6rhpycz0.jpeg', 
+	u'verified': False, 
+	u'profile_text_color': u'362720', 
+	u'profile_image_url_https': u'https://pbs.twimg.com/profile_images/378800000677459702/40655ebea608957f6c6a58b4744c13fe_normal.png', 
+	u'profile_sidebar_fill_color': u'E5507E', 
+	u'entities': {
+		u'url': {
+			u'urls': [{u'url': u'http://t.co/p5IaxXqmC5', u'indices': [0, 22], u'expanded_url': u'http://shruggingcutely.tumblr.com/', u'display_url': u'shruggingcutely.tumblr.com'}]
+		}, 
+		u'description': {
+			u'urls': []
+		}
+	}, 
+	u'followers_count': 80, 
+	u'profile_sidebar_border_color': u'FFFFFF', 
+	u'id_str': u'375294652', 
+	u'profile_background_color': u'022330', 
+	u'listed_count': 0, 
+	u'is_translation_enabled': False, 
+	u'utc_offset': 7200, 
+	u'statuses_count': 27522, 
+	u'description': u'Cute, but fragile flower -- handle with love and care and good things will happen. Singular they person. Beware of pixiv spam. Turn off my RTs, maybe?', 
+	u'friends_count': 161, 
+	u'location': u'Internet/Austria', 
+	u'profile_link_color': u'0084B4', 
+	u'profile_image_url': u'http://pbs.twimg.com/profile_images/378800000677459702/40655ebea608957f6c6a58b4744c13fe_normal.png', 
+	u'following': False, 
+	u'geo_enabled': False, 
+	u'profile_banner_url': u'https://pbs.twimg.com/profile_banners/375294652/1398215473', 
+	u'profile_background_image_url': u'http://pbs.twimg.com/profile_background_images/612515184/3vxfm489pbpn6rhpycz0.jpeg', 
+	u'screen_name': u'BobVFMontoya', 
+	u'lang': u'en', 
+	u'profile_background_tile': True, 
+	u'favourites_count': 129, 
+	u'name': u'Bob V. F. Montoya', 
+	u'notifications': False, 
+	u'url': u'http://t.co/p5IaxXqmC5', 
+	u'created_at': u'Sat Sep 17 21:33:02 +0000 2011', 
+	u'contributors_enabled': False, 
+	u'time_zone': u'Vienna', 
+	u'protected': False, 
+	u'default_profile': False, 
+	u'is_translator': False
+}, 
+u'geo': None, 
+u'in_reply_to_user_id_str': None, 
+u'possibly_sensitive': False, 
+u'lang': u'en', 
+u'created_at': u'Wed Aug 06 09:23:40 +0000 2014', 
+u'in_reply_to_status_id_str': None, 
+u'place': None, 
+u'metadata': {
+	u'iso_language_code': u'en', 
+	u'result_type': u'recent'
+}
+}
