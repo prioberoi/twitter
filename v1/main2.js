@@ -1,6 +1,3 @@
-//select patient
-var currentUser = 0000000001;
-
 //Width and height
 var margin = {top: 20, right: 150, bottom: 30, left: 150},
 	width = 960 - margin.left - margin.right,
@@ -8,20 +5,10 @@ var margin = {top: 20, right: 150, bottom: 30, left: 150},
 	
 //create scale functions
 var x = d3.scale.linear() 
-	.range([0, width]);
+	.range([width, 0]); //reversed so it'll plot chronologically
 	
 var y = d3.scale.linear()
 	.range([height, 0]);
-
-//axes
-var xAxis = d3.svg.axis()
-	.scale(x)
-	.orient("bottom");
-	
-var yAxis = d3.svg.axis()
-	.scale(y)
-	.orient("left")
-	.ticks(5);
 
 //create svg 
 var svg = d3.select("body")
@@ -31,15 +18,36 @@ var svg = d3.select("body")
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
-
 //data
 d3.json("tweets.json", function(error, json) {
 	if (error) return console.warn(error);
 	data = json;
 	dataset = data.statuses
 
-	x.domain([d3.min(dataset, function(d) {return parseFloat(d.id);}), d3.max(dataset, function(d) {return parseFloat(d.id)}) ]);
+	//dates and scale for dates
+	function getDate(d) {
+		return new Date(d.created_at);
+	}
+	var minDate = getDate(dataset[0]),
+		maxDate = getDate(dataset[dataset.length-1]);
+
+	var timeScale = d3.time.scale()
+		.domain([maxDate, minDate])
+		.range([0, width]);
+
+	//axes
+	var xAxis = d3.svg.axis()
+		.scale(timeScale)
+		.orient("bottom")
+		.ticks(8)
+		.tickFormat(d3.time.format("%H:%M"));
+		
+	var yAxis = d3.svg.axis()
+		.scale(y)
+		.orient("left")
+		.ticks(5);
+
+	x.domain([0,dataset.length-1]);
 	y.domain([d3.min(dataset, function(d) {return parseFloat(d.retweet_count);}), d3.max(dataset, function(d) {return parseFloat(d.retweet_count)}) ]);
 
 	//generates axis last so it's on top
@@ -64,7 +72,7 @@ d3.json("tweets.json", function(error, json) {
 	.enter()
 	.append("circle")
 	.attr("cx", function (d) { 
-		return x(d.id); 
+		return timeScale(getDate(d));
 	})
 	.attr("cy", function (d) { 
 		return y(d.retweet_count); 
@@ -89,7 +97,23 @@ d3.json("tweets.json", function(error, json) {
 			.attr("font-size", "11px")
 			.attr("font-weight", "bold")
 			.attr("fill", "black")
-			.text("tweet id: " + d.id + " retweets: " + d.retweet_count);
+			.text("created: " + getDate(d) + " retweets: " + d.retweet_count);
+	
+		//create svg tweet box
+		var boxxPosition = (width/2);
+		var boxyPosition = (height/2);
+		
+		svg.append("text")
+		  .attr("id", "textbox")
+		  .attr("x", boxxPosition)
+		  .attr("y", boxyPosition)
+		  .attr("text-anchor", "middle")
+		  .attr("font-family", "sans-serif")
+		  .attr("font-size", "11px")
+		  .attr("font-weight", "bold")
+		  .attr("fill", "black")
+		  .text(d.text);
+		
 	})
 	.on("mouseout", function(d) {
 		d3.select(this)
@@ -98,6 +122,7 @@ d3.json("tweets.json", function(error, json) {
 			.attr("fill", "steelblue");
 		//Remove the tooltip
 		d3.select("#tooltip").remove();
+		d3.select("#textbox").remove();
 	});
 
 });
