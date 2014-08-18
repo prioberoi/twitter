@@ -1,7 +1,7 @@
 //Width and height
-var margin = {top: 20, right: 150, bottom: 30, left: 150},
+var margin = {top: 20, right: 150, bottom: 100, left: 150},
 	width = 960 - margin.left - margin.right,
-	height = 200 - margin.top - margin.bottom;
+	height = 300 - margin.top - margin.bottom;
 	
 //create scale functions
 var x = d3.scale.linear() 
@@ -99,20 +99,17 @@ d3.json("tweets.json", function(error, json) {
 			.attr("fill", "black")
 			.text("created: " + getDate(d) + " retweets: " + d.retweet_count);
 	
-		//create svg tweet box
+		//HTML div Tooltip for tweet text
 		var boxxPosition = (width/2);
-		var boxyPosition = (height/2);
+		var boxyPosition = (height+50);
 		
-		svg.append("text")
-		  .attr("id", "textbox")
-		  .attr("x", boxxPosition)
-		  .attr("y", boxyPosition)
-		  .attr("text-anchor", "middle")
-		  .attr("font-family", "sans-serif")
-		  .attr("font-size", "11px")
-		  .attr("font-weight", "bold")
-		  .attr("fill", "black")
+		d3.select("#tweetbox")
+		  .style("left", boxxPosition + "px")
+		  .style("top", boxyPosition + "px")
+		  .select("#value")
 		  .text(d.text);
+		
+		d3.select("#tweetbox").classed("hidden", false);
 		
 	})
 	.on("mouseout", function(d) {
@@ -122,7 +119,8 @@ d3.json("tweets.json", function(error, json) {
 			.attr("fill", "steelblue");
 		//Remove the tooltip
 		d3.select("#tooltip").remove();
-		d3.select("#textbox").remove();
+		//Remove the tweetbox
+		d3.select("#tweetbox").classed("hidden", true);
 	});
 
 });
