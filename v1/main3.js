@@ -9,6 +9,9 @@ var x = d3.scale.linear()
 	
 var y = d3.scale.linear()
 	.range([height, 0]);
+	
+var radius = d3.scale.linear()
+	.range([4,10])
 
 //create svg 
 var svg = d3.select("body")
@@ -19,7 +22,7 @@ var svg = d3.select("body")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //data
-d3.json("tweepyjson.txt", function(error, json) {
+d3.json("tweets2.json", function(error, json) {
 	if (error) return console.warn(error);
 	data = json;
 	dataset = data.statuses
@@ -49,6 +52,7 @@ d3.json("tweepyjson.txt", function(error, json) {
 
 	x.domain([0,dataset.length-1]);
 	y.domain([d3.min(dataset, function(d) {return parseFloat(d.retweet_count);}), d3.max(dataset, function(d) {return parseFloat(d.retweet_count)}) ]);
+	radius.domain([d3.min(dataset, function(d) {return parseFloat(d.retweet_count);}), d3.max(dataset, function(d) {return parseFloat(d.retweet_count)}) ]);
 
 	//generates axis last so it's on top
 	svg.append("g")
@@ -77,7 +81,9 @@ d3.json("tweepyjson.txt", function(error, json) {
 	.attr("cy", function (d) { 
 		return y(d.retweet_count); 
 	})
-	.attr("r", 4)
+	.attr("r", function (d) { 
+		return radius(d.retweet_count); 
+	})
 	.attr("fill", "steelblue")
 	//event listener for highlighting circles
 	.on("mouseover", function(d){ //turn circle orange on hover
@@ -97,11 +103,11 @@ d3.json("tweepyjson.txt", function(error, json) {
 			.attr("font-size", "11px")
 			.attr("font-weight", "bold")
 			.attr("fill", "black")
-			.text("created: " + getDate(d) + " retweets: " + d.retweet_count);
+			.text("created: " + getDate(d) + "\n retweets: " + d.retweet_count);
 	
 		//HTML div Tooltip for tweet text
-		var boxxPosition = (width/2);
-		var boxyPosition = (height+50);
+		var boxxPosition = (width/3);
+		var boxyPosition = (height+60);
 		
 		d3.select("#tweetbox")
 		  .style("left", boxxPosition + "px")
@@ -120,7 +126,65 @@ d3.json("tweepyjson.txt", function(error, json) {
 		//Remove the tooltip
 		d3.select("#tooltip").remove();
 		//Remove the tweetbox
-		d3.select("#tweetbox").classed("hidden", true);
+		//d3.select("#tweetbox").classed("hidden", true);
 	});
 
 });
+
+//TEST
+
+//width and height
+var w = width;
+var h = height;
+var barPadding = 1;
+
+//create second svg
+var svgHashtag = d3.select("body")
+	.append("svg")
+	.attr("width", w)
+	.attr("height", h);
+	
+//data
+var fakedata = [];
+for (var i = 0; i < 21; i++){
+	var newNumber = Math.round(Math.random() * 30);
+	fakedata.push(newNumber)
+}
+
+//bars
+svgHashtag.selectAll("rect")
+	.data(fakedata)
+	.enter()
+	.append("rect")
+	.attr("x", function (d, i){
+		return i * (w / fakedata.length);
+	})
+	.attr("y", function(d){
+		return h - (d * 4);
+	})
+	.attr("width", w / fakedata.length - barPadding)
+	.attr("height", function (d){
+		return d * 4;
+	})
+	.attr("fill", function(d){
+		return "rgb(0,0, " + (d * 10) + ")";
+	});
+
+//text
+svgHashtag.selectAll("text")
+	.data(fakedata)
+	.enter()
+	.append("text")
+	.text(function(d){
+		return d;
+	})
+	.attr("x", function(d, i){
+		return i * (w / fakedata.length) + (w / fakedata.length - barPadding) / 2; //x position is set to the left of each bar plus half the bar width 
+	})
+	.attr("y", function (d) {
+		return h - (d * 4) + 15;
+	})
+   .attr("font-family", "sans-serif")
+   .attr("font-size", "11px")
+   .attr("fill", "white")
+   .attr("text-anchor", "middle");

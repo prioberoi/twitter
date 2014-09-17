@@ -1,0 +1,8 @@
+https://twitter.com/search?q=%23womenagainstfeminism&src=typd
+
+https://api.twitter.com/1.1/search/tweets.json?q=%23womenagainstfeminism&src=typd
+
+https://api.twitter.com/1.1/search/tweets.json?q=%23womenagainstfeminism&count=100&result_type=recent
+
+this is where you get the command to retrieve these tweets:
+https://dev.twitter.com/apps/6583308/oauth?nid=10287
