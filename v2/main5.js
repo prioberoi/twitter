@@ -299,8 +299,14 @@ d3.json("tweets2.json", function(error, json) {
 			else if (key[i] == "antifeminist"){return "#d62728"}
 			else if (key[i] == "subjective"){return "#ff7f0e"}
 			else {return "#7f7f7f"};
-		}) //KEY TEXT WON'T SHOW UP
+		}); 
+		
+//KEY TEXT WON'T SHOW UP
+	svg.selectAll("text")
+		.data(key = ["feminist", "antifeminist", "subjective", "other"])
+		.enter()
 		.append("text")
+		.attr("id", "keytext")
 		.attr("text-anchor", "left")
 		.attr("x", (w / 5) + 10)
 		.attr("y", function (d, i){
@@ -310,7 +316,7 @@ d3.json("tweets2.json", function(error, json) {
 		.attr("font-size", "11px")
 		.attr("fill", "grey")
 		.text(function(d, i) {
-			return d;
+			return key[i];
 		});
 
 //Create nodes as circles
