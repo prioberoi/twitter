@@ -1,5 +1,5 @@
 //Width and height
-var margin = {top: 40, right: 100, bottom: 40, left: 100},
+var margin = {top: 60, right: 100, bottom: 40, left: 100},
 	width = 960 - margin.left - margin.right,
 	height = 600 - margin.top - margin.bottom;
 	
@@ -28,8 +28,6 @@ d3.json("json-feminism.txt", function(error, json) {
 	feminism = data.statuses
 	console.log(feminism.length);
 	
-	var ids = [];
-	
 	//function to check if an array contains a specific string
 	function contains(a, obj) {
 		for (var i = 0; i < a.length; i++) {
@@ -41,7 +39,7 @@ d3.json("json-feminism.txt", function(error, json) {
 			}
 		}
 	}
-	//for now, lets just add all tweets from one dataset to another
+	//addings all tweets from one json to another
 	d3.json("json-womenagainstfeminism.txt", function(error, json){
 		if (error) return console.warn(error);
 		womenagainstfeminism = json.statuses;
@@ -49,7 +47,7 @@ d3.json("json-feminism.txt", function(error, json) {
 			feminism.push(womenagainstfeminism[i]);
 		}
 		console.log(feminism.length);
-	//for now, lets just add all tweets from one dataset to another
+	//addings all tweets from one json to another
 	d3.json("json-womenempowerment.txt", function(error, json){
 		if (error) return console.warn(error);
 		womenempowerment = json.statuses;
@@ -57,7 +55,7 @@ d3.json("json-feminism.txt", function(error, json) {
 			feminism.push(womenempowerment[i]);
 		}
 		console.log(feminism.length);
-	//for now, lets just add all tweets from one dataset to another
+	//addings all tweets from one json to another
 	d3.json("json-yesallwomen.txt", function(error, json){
 		if (error) return console.warn(error);
 		yesallwomen = json.statuses;
@@ -67,15 +65,16 @@ d3.json("json-feminism.txt", function(error, json) {
 		console.log(feminism.length);
 	
 	// adding ids from feminism dataset to the id array
+	var ids = [];
 	for (i=0; i < feminism.length; i++){
 		if (contains(ids, feminism[i].id) == true){
-			console.log("already existed");
+			//do nothing
 		} else {
 			ids.push(feminism[i].id);
-			console.log("added to array");
 		}
 	}
 	
+	console.log("Number of unique tweet IDs:")
 	console.log(ids.length);
 
 	var dataset = feminism;
@@ -189,11 +188,11 @@ d3.json("json-feminism.txt", function(error, json) {
 			.attr("font-size", "11px")
 			.attr("font-weight", "bold")
 			.attr("fill", "grey")
-			.html(getDate(d) + "<br/>" + " retweets: " + Math.round(Math.pow(10, d.retweet_count)));
+			.html(getDate(d) + "<br/>" + " \n retweets: " + Math.round(Math.pow(10, d.retweet_count)));
 	
 		//HTML div Tooltip for tweet text
 		var boxxPosition = (width/3);
-		var boxyPosition = (height+110);
+		var boxyPosition = (height+120);
 		
 		d3.select("#tweetbox")
 		  .style("left", boxxPosition + "px")
